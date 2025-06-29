@@ -1,0 +1,75 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+header {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: #333;
+    margin: 0;
+}
+
+header p {
+    color: #666;
+    margin: 0.5rem 0 0;
+}
+
+main {
+    background: #fff;
+}
+
+/* Responsive images */
+main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Index Page Styles --- */
+.index-list .post-item {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.index-list .post-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.index-list h2 {
+    margin-bottom: 0.5rem;
+}
+
+.index-list h2 a {
+    text-decoration: none;
+}
+
+.index-list .post-meta {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: 0;
+}
+
+.index-list .post-excerpt {
+    color: #666;
+}
+
+.index-list .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+}

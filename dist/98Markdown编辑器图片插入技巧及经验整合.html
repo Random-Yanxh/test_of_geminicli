@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown编辑器图片插入技巧及经验整合</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="css/themes/fresh.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Markdown编辑器图片插入技巧及经验整合</h1>
+            
+                <p>作者：User | 发布于：2025/6/29</p>
+            
+        </header>
+        <hr>
+        <main>
+            <h2>前沿</h2>
+<p>lz之前有发过一些经验教学帖子，都是使用markdown编辑器进行编写的。然而，在我自己的markdown编辑器（Typora, Obsidian, vscode...）上显示正常的内容，98的markdown编辑器中预览却容易出现问题，主要是教程帖子中有许多截图，如果用UBB编辑器的话排版很麻烦，而markdown编辑器中，直接插入图片图片链接会在文本的最后，采用默认的<code>![]()</code>格式插入图片则会出现大小、位置出错。</p>
+<p>在98搜索之后，有关98自带markdown编辑器的使用技巧很少，也没有看到有我这个问题的，许多markdown的帖子里面好像也没图，导致我在一开始为了把教程搬到98上花费了不少时间，也有一些打击分享的积极性。不过，在AI的帮助下，我还是把<strong>图片插入</strong>的问题比较好地解决了，现在把这个经验总结并分享，希望98的各位前辈在分享经验和教学帖子的时候也能够<strong>在让帖子图文并茂上少走弯路</strong>，多多分享有价值的资源。</p>
+<hr>
+<h2>前人经验</h2>
+<p>在论坛中搜到了一些前辈的经验帖，现整合如下：</p>
+<p>【编程技术】在网页版 CC98 Markdown 中使用 LaTeX <a href="https://www.cc98.org/topic/5075418">https://www.cc98.org/topic/5075418</a> 
+【论坛指南】【学会了】98网页端的markdown便器怎么艾特人啊？ <a href="https://www.cc98.org/topic/5083835">https://www.cc98.org/topic/5083835</a>
+【论坛指南】在98优雅地输入大段内容——Markdown快速入门 <a href="https://www.cc98.org/topic/5113950">https://www.cc98.org/topic/5113950</a> 
+【数码世界】98里用Markdown编辑器怎么添加表情 <a href="https://www.cc98.org/topic/5334793#7">https://www.cc98.org/topic/5334793#7</a> 解决方案在7L
+【似水流年】98的Markdown编辑器怎么上传文件？ <a href="https://www.cc98.org/topic/6049711">https://www.cc98.org/topic/6049711</a> </p>
+<hr>
+<h2>Markdown编辑器更优雅地插入图片</h2>
+<p>markdown无法直接插入图片，只能插入链接。在本地编辑时，可以选择采用本地图片的绝对/相对路径，但是这样如果你的文件目录管理不好，或者图片移动了位置，markdown编辑器就无法渲染图片，会比较麻烦。所以一般来说配置<strong>图床</strong>，插入图片的网络位置（链接）是一种更优雅方便的方案。</p>
+<p>如果你的图片不是很重要，没有什么敏感或者隐私内容，可以图省事采用免费的图床（推荐SMMS），缺点是免费图床可能不稳定，万一被封或者跑路会丢失这些图片；如果你的图片比较重要，可以采用国内大厂付费稳定的云存储方案（阿里/腾讯/华为/七牛等），或者使用CloudFlare自建图床。</p>
+<p>如果你已经会在Typora/Obsidian中配置Picgo(或者piclist等类似软件)+图床，请直接阅读下一部分；如果你还不会配置图床，可以在线搜索Picgo+Typora/Obsidian+SMMS图床，按照教学走。
+也可以参考这个帖子中Picgo+SM.MS图床配置的部分。</p>
+<blockquote>
+<p>【编程技术】hexo图片加载问题及图床解决方法（以PicGo+SM.MS方式解决图片加载问题） <a href="https://www.cc98.org/topic/6098948">https://www.cc98.org/topic/6098948</a> 复制本链接到浏览器或者打开【CC98】微信小程序查看~</p>
+</blockquote>
+<p>我之前有使用Typora+picgo但玩不明白，相对来说，Obsidian的配置更加简单，搭配第三方<code>Image auto upload</code>插件可以实现类似于word插入图片的效果，即打开picgo后，往编辑器拖入/直接粘贴图片，会自动上传到图床，并粘贴为<code>![image.&lt;格式&gt;](图片网络链接)</code>的形式。但是这个形式在98编辑器中会有问题。</p>
+<p>也有把98作为内网图床的方法，即在另一个帖子的UBB编辑器中上传图片，这会生成一个只有内网可以访问的链接，把这个作为图片链接即可，原理是一样的，只是脱离了内网环境无法访问图片。</p>
+<h3>默认方案及其效果</h3>
+<p>在98发帖，采用markdown编辑器的上传图片功能，会在文本内容的最后生成以下格式的代码
+<code>![](图片链接)</code> ，示例图片链接为<code>![](https://file.cc98.org/v4-upload/d/2025/0325/c3fax1o4.webp)</code>
+在预览模式下可以看到，它的尺寸和位置很不可控，容易过大超出页面，导致效果极差。而且图片多一点在插入的时候很难找位置。
+<img src="https://s2.loli.net/2025/03/25/7IYZUohpNbfKCnS.png" alt="image.png">
+可能是98的markdown编辑器自己的问题，同样的代码在Obsidian和Typora中渲染都不会出现这样的问题。</p>
+<h3>采用HTML方案</h3>
+<p>那么如何调整图片的位置和大小呢？一种常见的方式是采用HTML或者CSS样式。我没有学过前端代码，求助AI后得到了一个比较可行的方案。</p>
+<p><strong>采用的方案</strong></p>
+<pre><code class="language-html">    &lt;div align=&quot;center&quot;&gt; 
+      &lt;img src=&quot;图片链接&quot; width=&quot;100%&quot;&gt;
+    &lt;/div&gt;
+</code></pre>
+<p><code>center</code>为居中格式，<code>width=&quot;100%&quot;</code>为大小
+效果：这样就比较正常地显示了图片
+<img src="https://s2.loli.net/2025/03/25/s6vtlpV85qygZw3.png" alt="image.png"></p>
+<p>如果太大，还可以把width参数改小，如75%
+<img src="https://s2.loli.net/2025/03/25/DmR4oFg3hz1TynB.png" alt="image.png">
+这样看起来要舒服一些。</p>
+<h3>批量修改</h3>
+<p>但是当我的<strong>图片比较多</strong>的时候，我如何更高效地进行格式的替换呢？markdown格式实际上可以在记事本等文本编辑器中直接打开，只是会丢失渲染的格式，那实际上我们走VsCode使用<strong>替换</strong>功能就可以了。呈现图片的代码有固定的语法，在vscode中可以采用正则表达式来批量替换。
+<strong>操作步骤</strong></p>
+<ol>
+<li><strong>打开替换面板</strong><br><code>Ctrl+H</code>（Windows/Linux）或 <code>Cmd+H</code>（Mac），启用正则表达式模式（点击 <code>.*</code> 图标）。</li>
+<li><strong>输入正则表达式</strong>  <ul>
+<li><strong>查找</strong>：<pre><code class="language-regex">^(\s*)!\[(.*?)\]\((.*?)\)\s*$
+</code></pre>
+</li>
+<li><strong>替换为</strong>：</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-html">$1&lt;div align=&quot;center&quot;&gt;\n$1  &lt;img src=&quot;$3&quot; width=&quot;100%&quot;&gt;\n$1&lt;/div&gt;
+</code></pre>
+<ol start="3">
+<li><strong>执行替换</strong><br>点击「全部替换」按钮完成操作。
+示例：
+<img src="https://s2.loli.net/2025/03/25/x2Va6g3sjpcPGBL.png" alt="image.png">
+替换后
+<img src="https://s2.loli.net/2025/03/25/Jc5sOqvZ9jnMIxf.png" alt="image.png">
+这样的正则表达式能够比较好地维持之前的缩进，图片的缩进不太会乱掉。注意替换为的表达式前面不要有空格。
+替换完之后就可以复制全部代码到98的markdown编辑器，并点Preview来预览检查效果。有时候可能会出现图片下方的文字变成代码块的形式（<code>即被``` ```所包裹，渲染为代码</code>），这个手动修改一下就好。</li>
+</ol>
+<hr>
+<h2>一些拓展</h2>
+<p>98发帖默认是UBB编辑器，相对来说操作简便更好上手，对文件、图片、表情、引用、公式渲染等功能的支持更好。然而，markdown编辑器在排版和教程编写上也有其独特优势，特别是把本地markdown文档搬上来的时候更为方便。两者各有所长，这里也整理了一些用法。</p>
+<ul>
+<li>UBB：<ul>
+<li>插入markdown：<code>[md] [\md]</code> </li>
+<li>插入公式：<code>$$ a^2+b^2=c_2 $$</code>支持Latex语法</li>
+<li>引用：<code>[qoute]要引用的内容[\qoute]</code>有时在回复楼上内容的时候，大段的引用非常占空间，可以在保留<code>[qoute][\qoute]</code>的条件下对引用的内容进行删减。</li>
+</ul>
+</li>
+<li>md：<ul>
+<li>见“前人经验”</li>
+</ul>
+</li>
+</ul>
+
+        </main>
+        <footer>
+            <p>Generated by My Static Site Generator</p>
+        </footer>
+    </div>
+</body>
+</html>

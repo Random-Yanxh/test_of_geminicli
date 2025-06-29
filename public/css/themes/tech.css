@@ -1,0 +1,106 @@
+/* --- 科技感主题 (Tech Style) --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #0a0f18; /* 深蓝背景 */
+    color: #c5d9f2; /* 提高正文对比度 */
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 850px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: transparent; /* 移除容器背景色，使其与body一致 */
+    border: 1px solid #00aaff;
+    box-shadow: 0 0 25px rgba(0, 170, 255, 0.2);
+    border-radius: 5px;
+}
+
+header {
+    text-align: left;
+    border-bottom: 2px solid #00aaff;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    background: none;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #88a1b9;
+}
+
+h1, h2, h3 {
+    color: #00d4ff;
+    font-weight: 700;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+}
+
+a {
+    color: #ff47a3; /* 亮粉色链接 */
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover {
+    text-shadow: 0 0 8px rgba(255, 71, 163, 0.7);
+    background-color: rgba(255, 71, 163, 0.1);
+}
+
+hr {
+    border: 0;
+    border-image: linear-gradient(to right, rgba(0,0,0,0), #00aaff, rgba(0,0,0,0)) 1;
+    border-image-slice: 1;
+    border-top: 1px solid;
+    margin: 2.5rem 0;
+}
+
+main img {
+    border: 1px solid #00aaff;
+    padding: 5px;
+    background-color: #0a0f18;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+
+blockquote {
+    border-left: 4px solid #ff47a3;
+    padding-left: 1rem;
+    margin-left: 0;
+    background-color: rgba(255, 71, 163, 0.05);
+    color: #f0f8ff;
+}
+
+code {
+    background-color: rgba(0, 170, 255, 0.15);
+    color: #99ddff;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+pre {
+    background-color: #0d121c;
+    border: 1px solid #334155;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #334155;
+    font-size: 0.8rem;
+    color: #88a1b9;
+}

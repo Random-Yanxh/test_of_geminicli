@@ -1,0 +1,102 @@
+/* --- 古风主题 (Ancient Style) --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Serif SC', serif;
+    background-color: #fdfaf4; /* 宣纸色 */
+    color: #3a3a3a; /* 墨色 */
+    line-height: 1.8;
+    letter-spacing: 1.2px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #8c8c8c;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    background: none;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #6a6a6a;
+}
+
+h1, h2, h3 {
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+a {
+    color: #8a0000; /* 朱砂色 */
+    text-decoration: none;
+    border-bottom: 1px dotted #8a0000;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #c00;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #dcdcdc;
+    margin: 2rem 0;
+}
+
+main img {
+    border: 8px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+main img:hover {
+    transform: scale(1.02);
+}
+
+blockquote {
+    border-left: 4px solid #8c8c8c;
+    padding-left: 1rem;
+    margin-left: 0;
+    color: #5a5a5a;
+    font-style: italic;
+}
+
+code {
+    background-color: #e9e7e1;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+pre {
+    background-color: #e9e7e1;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #dcdcdc;
+    font-size: 0.8rem;
+    color: #8a8a8a;
+}
