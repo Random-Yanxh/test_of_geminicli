@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roo Code+gemini-cli实现自动写代码（Vibe Coding？）</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="dist/css/style.css">
     
-    <link rel="stylesheet" href="css/themes/fresh.css">
+    <link rel="stylesheet" href="dist/css/themes/fresh.css">
     
 </head>
 <body>
@@ -29,7 +29,7 @@
 <h3>Vibe coding 与 Roo Code</h3>
 <p><strong>Vibe coding</strong>是当前非常火的一个大模型落地的概念，维基百科词条介绍<a href="https://en.wikipedia.org/wiki/Vibe_coding">Vibe coding</a>如下：</p>
 <blockquote>
-<p><strong>Vibe coding</strong> is an approach to producing software by using <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" title="Artificial intelligence">artificial intelligence</a> (AI), where a person describes a problem in a few <a href="https://en.wikipedia.org/wiki/Natural_language" title="Natural language">natural language</a> sentences as a <a href="https://en.wikipedia.org/wiki/Prompt_engineering" title="Prompt engineering">prompt</a> to a <a href="https://en.wikipedia.org/wiki/Large_language_model" title="Large language model">large language model</a> (LLM) tuned for coding. The LLM generates <a href="https://en.wikipedia.org/wiki/Application_software" title="Application software">software</a> based on the description, shifting the programmer&#39;s role from manual coding to guiding, testing, and refining the AI-generated <a href="https://en.wikipedia.org/wiki/Source_code" title="Source code">source code</a>.
+<p><strong>Vibe coding</strong> is an approach to producing software by using <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" title="Artificial intelligence">artificial intelligence</a> (AI), where a person describes a problem in a few <a href="https://en.wikipedia.org/wiki/Natural_language" title="Natural language">natural language</a> sentences as a <a href="https://en.wikipedia.org/wiki/Prompt_engineering" title="Prompt engineering">prompt</a> to a <a href="https://en.wikipedia.org/wiki/Large_language_model" title="Large language model">large language model</a> (LLM) tuned for coding. The LLM generates <a href="https://en.wikipedia.org/wiki/Application_software" title="Application software">software</a> based on the description, shifting the programmer's role from manual coding to guiding, testing, and refining the AI-generated <a href="https://en.wikipedia.org/wiki/Source_code" title="Source code">source code</a>.
 Vibe 编码是一种利用人工智能（AI）生成软件的方法，其中一个人用几句话的自然语言描述一个问题作为提示输入到针对编码优化的大语言模型（LLM）中。LLM 根据描述生成软件，将程序员的角色从手动编码转变为指导、测试和优化由AI生成的源代码。</p>
 </blockquote>
 <p>提起Vibe coding，避不开<a href="https://www.cursor.com/cn">Cursor</a>这一IDE。不可否认Cursor很强，Tab很好用，但是它20$/月起步的费用以及交了钱还会降智的吃相让我不习惯也不喜欢使用它。</p>
@@ -165,12 +165,12 @@ Vibe 编码是一种利用人工智能（AI）生成软件的方法，其中一�
 <li>修改代理
  打开Clash，在设置中找到你的 端口设置，一般是<code>7897</code>。找到你安装Gemini-cli的目录，找到<code>.gemini</code>文件夹，进去之后新建一个txt文本文档，粘贴下面的代码，如果你的端口不是7897那就对应修改。保存-关闭，把文本文档重命名为 <code>.env</code></li>
 </ol>
-<pre><code>HTTPS_PROXY=&quot;http://127.0.0.1:7897&quot;
-HTTP_PROXY=&quot;http://127.0.0.1:7897&quot;
+<pre><code>HTTPS_PROXY="http://127.0.0.1:7897"
+HTTP_PROXY="http://127.0.0.1:7897"
 </code></pre>
 <p>之后回到Gemini-cli运行的终端，重新进行登录应该就可以了，成功的结果是这样的：
 <img src="https://s2.loli.net/2025/06/28/3uyXQqb1AUj4dzJ.png" alt="image.png">
-部分老账号可能出现：Failed to login. Workspace accounts and licensed Code Assist users must configure...无法登录的报错，可以参考<a href="https://mp.weixin.qq.com/s/N1E8zf5Jbd7ZpA8wIKojRw">这篇文章</a>进行尝试修改，注意最后的代码中 项目ID 应该用 <code>&quot; &quot;</code>包裹。</p>
+部分老账号可能出现：Failed to login. Workspace accounts and licensed Code Assist users must configure...无法登录的报错，可以参考<a href="https://mp.weixin.qq.com/s/N1E8zf5Jbd7ZpA8wIKojRw">这篇文章</a>进行尝试修改，注意最后的代码中 项目ID 应该用 <code>" "</code>包裹。</p>
 <h3>在Roo Code中配置Gemini-cli</h3>
 <p>！请确保Roo Code已经更新到最新版本（3.22.4）
 打开设置-提供商，新建一个配置文件，选择提供商为 Gemini CLI，拉到下面模型选择gemini-2,5-pro，保存即可。
